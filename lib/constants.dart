@@ -16,6 +16,7 @@ customElevatedButton(String text, BuildContext context, Function onTap) {
       child: Text(
         text,
         style: TextStyle(
+          fontFamily: 'Mesmeric',
             color: blackColor,
             fontWeight: FontWeight.bold,
             fontSize: screenHeight / 65),
@@ -43,6 +44,7 @@ Text cusText(
         fontWeight: Boldness,
         overflow: TextOverflow.ellipsis,
         color: textColor,
+        fontFamily: 'Mesmeric',
         backgroundColor: backgroundColor != null ? backgroundColor : null),
   );
 }

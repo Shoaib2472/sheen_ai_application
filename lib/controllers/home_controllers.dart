@@ -12,13 +12,13 @@ class HomeController extends GetxController {
   late Map<String, dynamic> decodedTokenPayload;
   var categoriesModel = CategoriesModel();
   RxList<Record> recordList = RxList();
-  RxString currFilter = 'Prices High to Low'.obs;
+  RxString currFilter = 'Prices Low to High'.obs;
   RxBool isChecked = false.obs;
   List<String> list = <String>[
-    'Prices From Low To High',
-    'Prices From High To Low',
-    'Gld Wt. From Low To High',
-    'Gld Wt. From High To Low',
+    'Prices Low To High',
+    'Prices High To Low',
+    'Gld Wt. Low To High',
+    'Gld Wt. High To Low',
   ];
   RxInt selectedCount = 0.obs;
   final path = '/data-engine/products/paginate/';

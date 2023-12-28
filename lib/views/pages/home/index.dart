@@ -18,77 +18,75 @@ class _HomePageState extends State<HomePage> {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
-          return Expanded(
-            child: AlertDialog(
-              surfaceTintColor: Color.fromARGB(255, 221, 132, 243),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0), // Set border radius
-              ),
-              //contentPadding: EdgeInsets.zero,
-              insetPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 220),
-              elevation: 0,
-              //contentPadding: EdgeInsets.all(0.0),
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text('Choose a sorting'),
-                  Icon(
-                    Icons.filter_alt_outlined,
-                    color: blueColor,
-                    size: 30,
-                  )
-                ],
-              ),
-              content: Column(children: [
-                RadioListTile(
-                  value: cgController.list[0],
-                  groupValue: cgController.currFilter.value,
-                  onChanged: (value) {
-                    cgController.reorderPriceAsc();
-                    cgController.currFilter.value = value!;
-                    Navigator.pop(context);
-                  },
-                  title: Text(cgController.list[0]),
-                ),
-                RadioListTile(
-                  value: cgController.list[1],
-                  groupValue: cgController.currFilter.value,
-                  onChanged: (value) {
-                    cgController.reorderPriceDes();
-                    cgController.currFilter.value = value!;
-                    Navigator.pop(context);
-                  },
-                  title: Text(cgController.list[1]),
-                ),
-                RadioListTile(
-                  value: cgController.list[2],
-                  groupValue: cgController.currFilter.value,
-                  onChanged: (value) {
-                    cgController.reorderGoldWeightAsc();
-                    cgController.currFilter.value = value!;
-                    Navigator.pop(context);
-                  },
-                  title: Text(cgController.list[2]),
-                ),
-                RadioListTile(
-                  value: cgController.list[3],
-                  groupValue: cgController.currFilter.value,
-                  onChanged: (value) {
-                    cgController.reorderGoldWeightDes();
-                    cgController.currFilter.value = value!;
-                    Navigator.pop(context);
-                  },
-                  title: Text(cgController.list[3]),
-                ),
-              ]),
-              actions: [
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: smallText('Cancel', textColor: Colors.green))
+          return AlertDialog(
+            surfaceTintColor: Color.fromARGB(255, 221, 132, 243),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0), // Set border radius
+            ),
+            //contentPadding: EdgeInsets.all(15).copyWith(bottom: 10),
+            insetPadding: EdgeInsets.symmetric(horizontal: 50, vertical: 235),
+            elevation: 0,
+            //contentPadding: EdgeInsets.all(0.0),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                cusText('Choose a sorting', 23),
+                Icon(
+                  Icons.filter_alt_outlined,
+                  color: blueColor,
+                  size: 30,
+                )
               ],
             ),
+            content: Column(children: [
+              RadioListTile(
+                value: cgController.list[0],
+                groupValue: cgController.currFilter.value,
+                onChanged: (value) {
+                  cgController.reorderPriceAsc();
+                  cgController.currFilter.value = value!;
+                  Navigator.pop(context);
+                },
+                title: cusText(cgController.list[0], 18),
+              ),
+              RadioListTile(
+                value: cgController.list[1],
+                groupValue: cgController.currFilter.value,
+                onChanged: (value) {
+                  cgController.reorderPriceDes();
+                  cgController.currFilter.value = value!;
+                  Navigator.pop(context);
+                },
+                title: cusText(cgController.list[1], 18),
+              ),
+              RadioListTile(
+                value: cgController.list[2],
+                groupValue: cgController.currFilter.value,
+                onChanged: (value) {
+                  cgController.reorderGoldWeightAsc();
+                  cgController.currFilter.value = value!;
+                  Navigator.pop(context);
+                },
+                title: cusText(cgController.list[2], 18),
+              ),
+              RadioListTile(
+                value: cgController.list[3],
+                groupValue: cgController.currFilter.value,
+                onChanged: (value) {
+                  cgController.reorderGoldWeightDes();
+                  cgController.currFilter.value = value!;
+                  Navigator.pop(context);
+                },
+                title: cusText(cgController.list[3], 18),
+              ),
+            ]),
+            actions: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: smallText('Cancel', textColor: Colors.green))
+            ],
           );
         });
   }
@@ -218,6 +216,7 @@ class _HomePageState extends State<HomePage> {
                 child: TextField(
                   controller: searchQuery,
                   decoration: InputDecoration(
+                    hintStyle: TextStyle(fontFamily: 'Mesmeric'),
                     hintText: 'Search',
                     prefixIcon: Icon(
                       Icons.search_rounded,
@@ -371,7 +370,7 @@ class _HomePageState extends State<HomePage> {
                                               textColor: blueColor),
                                           cusText(
                                             '${cgController.recordList[index].grossWeight}g',
-                                            19,
+                                            18,
                                             textColor: blueColor,
                                           ),
                                         ],
@@ -392,11 +391,11 @@ class _HomePageState extends State<HomePage> {
                                                   4
                                               ? cusText(
                                                   '${cgController.recordList[index].netWeight}g',
-                                                  19,
+                                                  18,
                                                   textColor: blueColor)
                                               : cusText(
                                                   '${cgController.recordList[index].netWeight.toString().substring(0, 4)}g',
-                                                  19,
+                                                  18,
                                                   textColor: blueColor,
                                                 ),
                                         ],
@@ -416,11 +415,11 @@ class _HomePageState extends State<HomePage> {
                                                   5
                                               ? cusText(
                                                   '${cgController.recordList[index].styleNo}',
-                                                  19,
+                                                  18,
                                                   textColor: blueColor)
                                               : cusText(
                                                   '${cgController.recordList[index].styleNo.toString().substring(0, 6)}',
-                                                  19,
+                                                  18,
                                                   textColor: blueColor,
                                                 ),
                                         ],
@@ -436,7 +435,7 @@ class _HomePageState extends State<HomePage> {
                                               textColor: blueColor),
                                           cusText(
                                             '${cgController.recordList[index].jewelPrice}',
-                                            19,
+                                            18,
                                             textColor: blueColor,
                                           ),
                                         ],
