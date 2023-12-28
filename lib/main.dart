@@ -4,7 +4,7 @@ import 'package:sheen_ai_application/utils/env.dart';
 import 'package:sheen_ai_application/views/pages/home/index.dart';
 
 Future<void> main() async {
-  //await Env.init();
+ //  await Env.init();
   // runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
   runApp(MyApp());
 }

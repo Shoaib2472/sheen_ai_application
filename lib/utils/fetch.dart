@@ -5,9 +5,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sheen_ai_application/utils/env.dart';
 
 class Fetch {
-  // final String _apiHost = Env.getString('API_HOST');
-  // final int _apiPort = Env.getInt('API_PORT');
-  // final String _apiScheme = Env.getString('API_SCHEME');
+ // final String _apiHost = Env.getString('API_HOST');
+ // final int _apiPort = Env.getInt('API_PORT');
+ // final String _apiScheme = Env.getString('API_SCHEME');
 
   final _dio = Dio();
   var _uri;
@@ -62,7 +62,7 @@ class Fetch {
     try {
       print('i Am in response$queryParameters');
       Response httpResponse = await _dio.post(
-          'https://e-creatives-dev.de.r.appspot.com/api/data-engine/products/paginate',
+          'https://e-creatives-dev.de.r.appspot.com/api/$path',
           queryParameters: queryParameters,
           data: data,
           options: Options(

@@ -8,7 +8,7 @@ customElevatedButton(String text, BuildContext context, Function onTap) {
   var screenwidth = MediaQuery.of(context).size.width;
   return Container(
     margin: EdgeInsets.symmetric(
-        horizontal: screenwidth / 100, vertical: screenHeight / 72),
+        horizontal: screenwidth / 90, vertical: screenHeight / 72),
     child: ElevatedButton(
       onPressed: () {
         onTap();
@@ -22,9 +22,8 @@ customElevatedButton(String text, BuildContext context, Function onTap) {
       ),
       style: ElevatedButton.styleFrom(
           minimumSize: Size(50, 40),
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(screenHeight / 76)),
+          padding: EdgeInsets.symmetric(horizontal: 6),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           backgroundColor: blueColor),
     ),
   );
